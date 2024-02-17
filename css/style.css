@@ -1,0 +1,148 @@
+/* CSS Reset */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Root Variable */
+:root{
+    --color-badge:#AFCEDD;
+    --color-badge-text:#234894;
+    --color-btn:#219F95;
+    --color-headings:#696969;
+    --color-body:#1E1E1E;
+    --color-white:#FFFFFF;
+    --color-border:lightgray;
+}
+
+html{
+    font-size: 62.5%;
+    direction: rtl;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+
+.currentRequestTitle {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*----------------- All Requests  -----------------*/
+
+.allRequests{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/*----------------- Request  -----------------*/
+
+.request {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    padding: 1.4rem;
+    gap:1.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+
+/*----------------- Request Header  -----------------*/
+.request-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.request-upload{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    color: #234894;
+    font-weight: bold;
+}
+
+.request-upload__badge {
+    background-color: var(--color-badge);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.request-date{
+    color: var(--color-headings);
+    font-size: 1rem;
+}
+
+
+/*----------------- Request Content  -----------------*/
+.request-title{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.request-number{
+    font-size: 1.1rem;
+    color: var(--color-headings);
+}
+
+
+/*----------------- Request Footer  -----------------*/
+
+.request-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.request-information {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.request-information__image{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.request-information__name{
+    font-weight: bold;
+}
+
+.request__view{
+    background-color: var(--color-btn);
+    color: var(--color-white);
+    border: 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 12px;
+}
+
+
+
+/*----------------- Responsive Media Query  -----------------*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .allRequests{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .allRequests{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
